@@ -8,6 +8,10 @@ verify_ssl = true
 [packages]
 flask = "*"
 gunicorn = "*"
+flask-heroku = "*"
+flask-cors = "*"
+psychopg2 = "*"
+flask-sqlalchemy = "*"
 
 [requires]
 python_version = "3.8"
