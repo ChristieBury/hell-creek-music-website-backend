@@ -78,10 +78,10 @@ def comic_update(id):
         return jsonify('Completed Comic Page Update')
     return jsonify('Failed Update')
 
-# @app.route('/static')
-# def favicon():
-#     return send_from_directory(os.path.join(app.root_path, 'static'),
-#                                'favicon.guitar-black-png', mimetype='image/png')
+@app.route('/static')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.guitar-black-png', mimetype='image/png')
     
 if __name__ == '__main__':
     app.run(debug=True)
