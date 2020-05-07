@@ -1,9 +1,9 @@
-import os
+# import os
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_heroku import Heroku
-from flask import send_from_directory
+# from flask import send_from_directory
 
 app = Flask(__name__)
 CORS(app)
@@ -78,10 +78,10 @@ def comic_update(id):
         return jsonify('Completed Comic Page Update')
     return jsonify('Failed Update')
 
-@app.route('/static')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.guitar-black-png', mimetype='image/png')
+# @app.route('/static')
+# def favicon():
+#     return send_from_directory(os.path.join(app.root_path, 'static'),
+#                                'favicon.guitar-black-png', mimetype='image/png')
     
 if __name__ == '__main__':
     app.run(debug=True)
