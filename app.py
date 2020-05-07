@@ -14,15 +14,15 @@ class Comic(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(200))
     author = db.Column(db.String)
-    # image = db.Column(db.String)
+   
 
-    def __init__(self, title, author): #image):
+    def __init__(self, title, author): 
         self.title = title
         self.author = author
-        # self.image = image
+        
 
     def __repr__(self):
-        # return f"Title{self.title}"   
+         
         return '<Title%r>' % self.title      
 
 @app.route('/')
