@@ -29,6 +29,12 @@ class Comic(db.Model):
 def home():
     return "<h1>Comics!</h1>"
 
+
+@app.route('/comic-books', methods = ['GET'])
+def return_comics():
+    all_comics = db.session.query(Comic.id, Comic.title, Comic.author).all()
+    return jsonify(all_comics)
+    
 @app.route('/comic-books/input', methods=['POST'])
 def comics_input():
     if request.content_type == 'application/json':
@@ -41,11 +47,6 @@ def comics_input():
         db.session.commit()
         return jsonify("Data Posted")
     return jsonify('Did not post') 
-
-@app.route('/comic-books', methods = ['GET'])
-def return_comics():
-    all_comics = db.session.query(Comic.id, Comic.title, Comic.author).all()
-    return jsonify(all_comics)
 
 @app.route('/comic-book/<id>', methods = ['GET'])
 def return_single_comic(id):
