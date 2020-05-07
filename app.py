@@ -78,7 +78,7 @@ def comic_update(id):
         return jsonify('Completed Comic Page Update')
     return jsonify('Failed Update')
 
-@app.route('/favicon.guitar-black-png')
+@app.route('/assets/favicon.guitar-black-png')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, '../static/index.html'),
                                'favicon.guitar-black-png', mimetype='image/vnd.microsoft.icon')
